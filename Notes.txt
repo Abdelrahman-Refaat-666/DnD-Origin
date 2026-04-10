@@ -1,0 +1,11 @@
+Classes dict keys: (['name', 'slug', 'desc', 'hit_dice', 'hp_at_1st_level', 'hp_at_higher_levels', 'prof_armor', 'prof_weapons', 'prof_tools', 'prof_saving_throws', 'prof_skills', 'equipment', 'table', 'spellcasting_ability', 'subtypes_name', 'archetypes', 'document__slug', 'document__title', 'document__license_url', 'document__url'])
+Classes count = 12
+Original Classes count = 12
+
+Races dict keys: (['name', 'slug', 'desc', 'asi_desc', 'asi', 'age', 'alignment', 'size', 'size_raw', 'speed', 'speed_desc', 'languages', 'vision', 'traits', 'subraces', 'document__slug', 'document__title', 'document__license_url', 'document__url'])
+Races count = 20
+Original Races count = 9
+
+Backgrounds dict keys: (['name', 'desc', 'slug', 'skill_proficiencies', 'tool_proficiencies', 'languages', 'equipment', 'feature', 'feature_desc', 'suggested_characteristics', 'document__slug', 'document__title', 'document__license_url', 'document__url'])
+Backgrounds count = 42
+Original Backgrounds count = 17
