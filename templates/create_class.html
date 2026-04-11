@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="page">
+  <h1>Choose Your Class</h1>
+  <form method="post">
+    <select name="class_">
+      <option value="">-- Select a class --</option>
+      {% for class_ in classes %}
+        <option value="{{ class_.name }}">{{ class_.name }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit">Next</button>
+  </form>
+</div>
+{% endblock %}

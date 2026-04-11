@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="page">
+  <h1>Assign Ability Scores</h1>
+  <p>Points remaining: <span id="points">27</span></p>
+
+  <form method="post" id="abilities-form">
+    {% for ability in ["str", "dex", "con", "int", "wis", "cha"] %}
+      <div>
+        <label>{{ ability.upper() }}</label>
+        <button type="button" onclick="change('{{ ability }}', -1)">-</button>
+        <span id="{{ ability }}-score">8</span>
+        <button type="button" onclick="change('{{ ability }}', 1)">+</button>
+        <input type="hidden" name="{{ ability }}" id="{{ ability }}" value="8">
+      </div>
+    {% endfor %}
+
+    <button type="submit">Next</button>
+  </form>
+
+  <script>
+  const COSTS = {8:0, 9:1, 10:2, 11:3, 12:4, 13:5, 14:7, 15:9};
+  let points = 27;
+  const scores = {str:8, dex:8, con:8, int:8, wis:8, cha:8};
+
+  function change(ability, direction) {
+    const current_score = scores[ability];
+    const next_score = current_score + direction;
+
+    if (next_score < 8 || next_score > 15) return;
+
+    const cost = COSTS[next_score] - COSTS[current_score];
+
+    if (points - cost < 0) return;
+
+    scores[ability] = next_score;
+    points -= cost;
+
+    document.getElementById(ability + "-score").innerText = next_score;
+    document.getElementById(ability).value = next_score;
+    document.getElementById("points").innerText = points;
+  }
+  </script>
+</div>
+{% endblock %}

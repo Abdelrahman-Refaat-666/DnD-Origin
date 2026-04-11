@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
     <title>DnD Origin</title>
-</head>
+    <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <nav>
+      {% if session.user_id %}
+      <a href="/">Home</a>
+      <a href="/create">New Character</a>
+      <a href="/logout">Logout</a>
+      {% endif %}
+    </nav>
 
-<body>
     {% block content %}{% endblock %}
-</body>
-
+  </body>
 </html>

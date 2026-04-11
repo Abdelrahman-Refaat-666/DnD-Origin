@@ -1,5 +1,20 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<h1>Welcome to DnD Origin</h1>
+<div class="page">
+  <h1>Your Characters</h1>
+
+  {% if characters %}
+    {% for character in characters %}
+      <div>
+        <div class="card">
+        <h2>{{ character["name"] }}</h2>
+        <p>{{ character["race"] }} — {{ character["class"] }} — {{ character["background"] }}</p>
+        <p>Level {{ character["level"] }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No characters yet. <a href="/create">Create one!</a></p>
+  {% endif %}
+</div>
 {% endblock %}

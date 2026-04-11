@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="page">
+  <h1>Review Your Character</h1>
+
+  <p><strong>Name:</strong> {{ character.name }}</p>
+  <p><strong>Race:</strong> {{ character.race }}</p>
+  <p><strong>Class:</strong> {{ character.class_ }}</p>
+  <p><strong>Background:</strong> {{ character.background }}</p>
+
+  <h2>Ability Scores</h2>
+  <p>STR: {{ character.abilities.str }}</p>
+  <p>DEX: {{ character.abilities.dex }}</p>
+  <p>CON: {{ character.abilities.con }}</p>
+  <p>INT: {{ character.abilities.int }}</p>
+  <p>WIS: {{ character.abilities.wis }}</p>
+  <p>CHA: {{ character.abilities.cha }}</p>
+
+  <a href="/create/save">Confirm & Save</a>
+</div>
+{% endblock %}
