@@ -1,7 +1,5 @@
 # DnD Origin
 
-#### Video Demo: https://youtu.be/I7pXaprywxI
-
 ## Overview
 
 DnD Origin is a web-based Dungeons & Dragons 5th Edition character creator built with Python, Flask, and SQLite. It guides users through the complete process of building a D&D character step by step — from choosing a name all the way to reviewing and persisting a finished character sheet to the database. The application is designed to feel like an interactive character-creation wizard, where each step builds on the last and all state is held in the server-side session until the user commits the character.
