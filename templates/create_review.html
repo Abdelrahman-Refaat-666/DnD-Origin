@@ -4,19 +4,23 @@
 <div class="page">
   <h1>Review Your Character</h1>
 
-  <p><strong>Name:</strong> {{ character.name }}</p>
-  <p><strong>Race:</strong> {{ character.race }}</p>
-  <p><strong>Class:</strong> {{ character.class_ }}</p>
-  <p><strong>Background:</strong> {{ character.background }}</p>
+  <div class="review-block">
+    <p><strong>Name</strong> <span>{{ character.name }}</span></p>
+    <p><strong>Race</strong> <span>{{ character.race }}</span></p>
+    <p><strong>Class</strong> <span>{{ character.class_ }}</span></p>
+    <p><strong>Background</strong> <span>{{ character.background }}</span></p>
+  </div>
 
   <h2>Ability Scores</h2>
-  <p>STR: {{ character.abilities.str }}</p>
-  <p>DEX: {{ character.abilities.dex }}</p>
-  <p>CON: {{ character.abilities.con }}</p>
-  <p>INT: {{ character.abilities.int }}</p>
-  <p>WIS: {{ character.abilities.wis }}</p>
-  <p>CHA: {{ character.abilities.cha }}</p>
+  <div class="review-block">
+    <p><strong>STR</strong> <span>{{ character.abilities.str }}</span></p>
+    <p><strong>DEX</strong> <span>{{ character.abilities.dex }}</span></p>
+    <p><strong>CON</strong> <span>{{ character.abilities.con }}</span></p>
+    <p><strong>INT</strong> <span>{{ character.abilities.int }}</span></p>
+    <p><strong>WIS</strong> <span>{{ character.abilities.wis }}</span></p>
+    <p><strong>CHA</strong> <span>{{ character.abilities.cha }}</span></p>
+  </div>
 
-  <a href="/create/save">Confirm & Save</a>
+  <a href="/create/save" class="btn">Confirm & Save</a>
 </div>
 {% endblock %}

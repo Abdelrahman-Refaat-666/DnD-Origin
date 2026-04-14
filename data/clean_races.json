@@ -1,0 +1,312 @@
+{
+  "dragonborn": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "normal",
+    "asi": {
+      "strength": 2,
+      "charisma": 1
+    },
+    "languages": [
+      "common",
+      "draconic"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [
+      "draconic ancestry"
+    ],
+    "traits": [
+      "draconic ancestry",
+      "breath weapon",
+      "damage resistance"
+    ],
+    "subraces": {}
+  },
+  "dwarf": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 25,
+    "vision": "darkvision",
+    "asi": {
+      "constitution": 2
+    },
+    "languages": [
+      "common",
+      "dwarvish"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [
+      "battleaxe",
+      "handaxe",
+      "light hammer",
+      "warhammer"
+    ],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [
+      "smith's tools",
+      "brewer's supplies",
+      "mason's tools"
+    ],
+    "resistances": [
+      "poison"
+    ],
+    "traits": [
+      "dwarven resilience",
+      "dwarven combat training",
+      "tool proficiency",
+      "stonecunning"
+    ],
+    "subraces": {
+      "hill dwarf": {
+        "asi": {
+          "wisdom": 1
+        },
+        "hp_increase_per_level": 1,
+        "traits": [
+          "dwarven toughness"
+        ]
+      }
+    }
+  },
+  "elf": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "darkvision",
+    "asi": {
+      "dexterity": 2
+    },
+    "languages": [
+      "common",
+      "elvish"
+    ],
+    "fixed_skills": [
+      "perception"
+    ],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [
+      "keen senses",
+      "fey ancestry",
+      "trance"
+    ],
+    "subraces": {
+      "high elf": {
+        "asi": {
+          "intelligence": 1
+        },
+        "languages": [
+          "any"
+        ],
+        "weapon_proficiencies": [
+          "longsword",
+          "shortsword",
+          "shortbow",
+          "longbow"
+        ],
+        "traits": [
+          "elf weapon training",
+          "cantrip",
+          "extra language"
+        ]
+      }
+    }
+  },
+  "gnome": {
+    "source": "wotc-srd",
+    "size": "small",
+    "speed": 25,
+    "vision": "darkvision",
+    "asi": {
+      "intelligence": 2
+    },
+    "languages": [
+      "common",
+      "gnomish"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [
+      "gnome cunning"
+    ],
+    "subraces": {
+      "rock gnome": {
+        "asi": {
+          "constitution": 1
+        },
+        "tool_proficiencies": [
+          "tinker's tools"
+        ],
+        "traits": [
+          "artificer's lore",
+          "tinker"
+        ]
+      }
+    }
+  },
+  "half-elf": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "darkvision",
+    "asi": {
+      "charisma": 2,
+      "other": 2
+    },
+    "languages": [
+      "common",
+      "elvish",
+      "any"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [
+      "any"
+    ],
+    "num_choices": 2,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [
+      "fey ancestry",
+      "skill versatility"
+    ],
+    "subraces": {}
+  },
+  "half-orc": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "darkvision",
+    "asi": {
+      "strength": 2,
+      "constitution": 1
+    },
+    "languages": [
+      "common",
+      "orc"
+    ],
+    "fixed_skills": [
+      "intimidation"
+    ],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [
+      "menacing",
+      "relentless endurance",
+      "savage attacks"
+    ],
+    "subraces": {}
+  },
+  "halfling": {
+    "source": "wotc-srd",
+    "size": "small",
+    "speed": 25,
+    "vision": "normal",
+    "asi": {
+      "dexterity": 2
+    },
+    "languages": [
+      "common",
+      "halfling"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [
+      "lucky",
+      "brave",
+      "halfling nimbleness"
+    ],
+    "subraces": {
+      "lightfoot": {
+        "asi": {
+          "charisma": 1
+        },
+        "traits": [
+          "naturally stealthy"
+        ]
+      }
+    }
+  },
+  "human": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "normal",
+    "asi": {
+      "strength": 1,
+      "dexterity": 1,
+      "constitution": 1,
+      "intelligence": 1,
+      "wisdom": 1,
+      "charisma": 1
+    },
+    "languages": [
+      "common",
+      "any"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [],
+    "traits": [],
+    "subraces": {}
+  },
+  "tiefling": {
+    "source": "wotc-srd",
+    "size": "medium",
+    "speed": 30,
+    "vision": "darkvision",
+    "asi": {
+      "intelligence": 1,
+      "charisma": 2
+    },
+    "languages": [
+      "common",
+      "infernal"
+    ],
+    "fixed_skills": [],
+    "choice_skills": [],
+    "num_choices": 0,
+    "weapon_proficiencies": [],
+    "armor_proficiencies": [],
+    "tool_proficiencies": [],
+    "resistances": [
+      "fire"
+    ],
+    "traits": [
+      "hellish resistance",
+      "infernal legacy"
+    ],
+    "subraces": {}
+  }
+}

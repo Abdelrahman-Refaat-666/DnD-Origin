@@ -2,13 +2,19 @@
 
 {% block content %}
 <div class="page">
-<h1>Register</h1>
-<form method="POST" action="/register">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <input type="password" name="confirmation" placeholder="Confirm Password" required>
+  <h1>Register</h1>
+  <form method="POST" action="/register">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="Username" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password" required>
+
+    <label for="confirmation">Confirm Password</label>
+    <input type="password" id="confirmation" name="confirmation" placeholder="Confirm Password" required>
+
     <button type="submit">Register</button>
-</form>
-<p>Already have an account? <a href="/login">Login</a></p>
+  </form>
+  <p>Already have an account? <a href="/login">Login</a></p>
 </div>
 {% endblock %}

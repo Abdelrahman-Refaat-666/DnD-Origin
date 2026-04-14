@@ -3,42 +3,54 @@
 {% block content %}
 <div class="page">
   <h1>Assign Ability Scores</h1>
-  <p>Points remaining: <span id="points">27</span></p>
+  <p class="points-bar">Points Remaining: <span id="points">27</span></p>
 
   <form method="post" id="abilities-form">
-    {% for ability in ["str", "dex", "con", "int", "wis", "cha"] %}
-      <div>
-        <label>{{ ability.upper() }}</label>
-        <button type="button" onclick="change('{{ ability }}', -1)">-</button>
-        <span id="{{ ability }}-score">8</span>
-        <button type="button" onclick="change('{{ ability }}', 1)">+</button>
-        <input type="hidden" name="{{ ability }}" id="{{ ability }}" value="8">
-      </div>
-    {% endfor %}
+    <div class="ability-grid">
+      {% for ability in ["str", "dex", "con", "int", "wis", "cha"] %}
+        <div class="ability-box">
+          <label>{{ ability.upper() }}</label>
+          <div class="ability-controls">
+            <button type="button" onclick="change('{{ ability }}', -1)">-</button>
+            <span id="{{ ability }}-score" class="ability-score">8</span>
+            <button type="button" onclick="change('{{ ability }}', 1)">+</button>
+          </div>
+          <input type="hidden" name="{{ ability }}" id="{{ ability }}" value="8">
+        </div>
+      {% endfor %}
+    </div>
 
     <button type="submit">Next</button>
   </form>
 
   <script>
+  // D&D 5e Point Buy cost table — because nothing in life is free, especially not a 15 in Strength
   const COSTS = {8:0, 9:1, 10:2, 11:3, 12:4, 13:5, 14:7, 15:9};
-  let points = 27;
+  let points = 27;  // 27 points, same as official rules. Spend wisely.
+  // Everyone starts at 8 — the baseline of mediocrity
   const scores = {str:8, dex:8, con:8, int:8, wis:8, cha:8};
 
+  // The +/- buttons call this. direction is +1 or -1.
   function change(ability, direction) {
     const current_score = scores[ability];
     const next_score = current_score + direction;
 
+    // Can't go below 8 or above 15 — those are the rules, we don't make them
     if (next_score < 8 || next_score > 15) return;
 
+    // Calculate how many points this change costs (or refunds, if decreasing)
     const cost = COSTS[next_score] - COSTS[current_score];
 
+    // Not enough points? Tough luck. Stay within budget.
     if (points - cost < 0) return;
 
+    // Actually apply the change
     scores[ability] = next_score;
     points -= cost;
 
+    // Update the UI so the player sees the result
     document.getElementById(ability + "-score").innerText = next_score;
-    document.getElementById(ability).value = next_score;
+    document.getElementById(ability).value = next_score;  // hidden input that gets submitted
     document.getElementById("points").innerText = points;
   }
   </script>

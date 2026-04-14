@@ -1,0 +1,499 @@
+{
+  "Acolyte": {
+    "source": "wotc-srd",
+    "desc": "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine. You are not necessarily a cleric-performing sacred rites is not the same thing as channeling divine power.\n\nChoose a god, a pantheon of gods, or some other quasi-divine being from among those listed in \"Fantasy-Historical Pantheons\" or those specified by your GM, and work with your GM to detail the nature of your religious service. Were you a lesser functionary in a temple, raised from childhood to assist the priests in the sacred rites? Or were you a high priest who suddenly experienced a call to serve your god in a different way? Perhaps you were the leader of a small cult outside of any established temple structure, or even an occult group that served a fiendish master that you now deny.",
+    "fixed_skills": [
+      "insight",
+      "religion"
+    ],
+    "choice_skills": [],
+    "num_choices": 0,
+    "tool_proficiencies": null,
+    "languages": "Two of your choice",
+    "equipment": "A holy symbol (a gift to you when you entered the priesthood), a prayer book or prayer wheel, 5 sticks of incense, vestments, a set of common clothes, and a pouch containing 15 gp",
+    "feature": "Shelter of the Faithful",
+    "feature_desc": "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle.\n\nYou might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple.",
+    "mementos": null,
+    "suggested_characteristics": "Acolytes are shaped by their experience in temples or other religious communities. Their study of the history and tenets of their faith and their relationships to temples, shrines, or hierarchies affect their mannerisms and ideals. Their flaws might be some hidden hypocrisy or heretical idea, or an ideal or bond taken to an extreme.\n\nPersonality Traits (d8):\n1. I idolize a particular hero of my faith, and constantly refer to that person's deeds and example.\n2. I can find common ground between the fiercest enemies, empathizing with them and always working toward peace.\n3. I see omens in every event and action. The gods try to speak to us, we just need to listen.\n4. Nothing can shake my optimistic attitude.\n5. I quote (or misquote) sacred texts and proverbs in almost every situation.\n6. I am tolerant (or intolerant) of other faiths and respect (or condemn) the worship of other gods.\n7. I've enjoyed fine food, drink, and high society among my temple's elite. Rough living grates on me.\n8. I've spent so long in the temple that I have little practical experience dealing with people in the outside world.\n\nIdeals (d6):\n1. Tradition. The ancient traditions of worship and sacrifice must be preserved and upheld. (Lawful)\n2. Charity. I always try to help those in need, no matter what the personal cost. (Good)\n3. Change. We must help bring about the changes the gods are constantly working in the world. (Chaotic)\n4. Power. I hope to one day rise to the top of my faith's religious hierarchy. (Lawful)\n5. Faith. I trust that my deity will guide my actions. I have faith that if I work hard, things will go well. (Lawful)\n6. Aspiration. I seek to prove myself worthy of my god's favor by matching my actions against his or her teachings. (Any)\n\nBonds (d6):\n1. I would die to recover an ancient relic of my faith that was lost long ago.\n2. I will someday get revenge on the corrupt temple hierarchy who branded me a heretic.\n3. I owe my life to the priest who took me in when my parents died.\n4. Everything I do is for the common people.\n5. I will do anything to protect the temple where I served.\n6. I seek to preserve a sacred text that my enemies consider heretical and seek to destroy.\n\nFlaws (d6):\n1. I judge harshly, and myself even more severely.\n2. I put too much trust in those who wield power within my temple's hierarchy.\n3. My piety sometimes leads me to blindly trust those that profess faith in my god.\n4. I am inflexible in my thinking.\n5. I am suspicious of strangers and expect the worst of them.\n6. Once I pick a goal, I become obsessed with it to the detriment of everything else in my life."
+  },
+  "Artisan": {
+    "source": "a5e",
+    "desc": "You are skilled enough in a trade to make a comfortable living and to aspire to mastery of your art. Yet here you are, ready to slog through mud and blood and danger.\n\nWhy did you become an adventurer? Did you flee a cruel master? Were you bored? Or are you a member in good standing, looking for new materials and new markets?",
+    "fixed_skills": [
+      "persuasion"
+    ],
+    "choice_skills": [
+      "insight",
+      "history"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "One set of artisan's tools, traveler's clothes.",
+    "feature": "Trade Mark",
+    "feature_desc": "When in a city or town, you have access to a fully-stocked workshop with everything you need to ply your trade. Furthermore, you can expect to earn full price when you sell items you have crafted (though there is no guarantee of a buyer).",
+    "mementos": [
+      "Jeweler: A 10,000 gold commission for a ruby ring (now all you need is a ruby worth 5,000 gold).",
+      "Smith: Your blacksmith's hammer (treat as a light hammer).",
+      "Cook: A well-seasoned skillet (treat as a mace).",
+      "Alchemist: A formula with exotic ingredients that will produce...something.",
+      "Leatherworker: An exotic monster hide which could be turned into striking-looking leather armor.",
+      "Mason: Your trusty sledgehammer (treat as a warhammer).",
+      "Potter: Your secret technique for vivid colors which is sure to disrupt Big Pottery.",
+      "Weaver: A set of fine clothes (your own work).",
+      "Woodcarver: A longbow, shortbow, or crossbow (your own work).",
+      "Calligrapher: Strange notes you copied from a rambling manifesto. Do they mean something?"
+    ],
+    "suggested_characteristics": null
+  },
+  "Charlatan": {
+    "source": "a5e",
+    "desc": "People call you a con artist, but you're really an entertainer. You make people happy—the separation of fools and villains from their money is purely a pleasant side effect.\n\nWhat is your most common con? Selling fake magic items? Speaking to ghosts? Posing as a long-lost relative? Or do you let dishonest people think they're cheating you?",
+    "fixed_skills": [
+      "deception"
+    ],
+    "choice_skills": [
+      "culture",
+      "insight",
+      "sleight of hand"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Common clothes, disguise kit, forgery kit.",
+    "feature": "Many Identities",
+    "feature_desc": "",
+    "mementos": [
+      "A die that always comes up 6.",
+      "A dozen brightly-colored \"potions\".",
+      "A magical staff that emits a harmless shower of sparks when vigorously thumped.",
+      "A set of fine clothes suitable for nobility.",
+      "A genuine document allowing its holder one free release from prison for a non-capital crime.",
+      "A genuine deed to a valuable property that is, unfortunately, quite haunted.",
+      "An ornate harlequin mask.",
+      "Counterfeit gold coins or costume jewelry apparently worth 100 gold (DC 15 Investigation check to notice they're fake).",
+      "A sword that appears more magical than it really is (its blade is enchanted with continual flame and it is a mundane weapon).",
+      "A nonmagical crystal ball."
+    ],
+    "suggested_characteristics": null
+  },
+  "Criminal": {
+    "source": "a5e",
+    "desc": "As a career criminal you were acquainted with murderers, thieves, and those who hunt them. Your new career as an adventurer is, relatively speaking, an honest trade.\n\nWere you a pickpocket? An assassin? A back-alley mugger? Are you still?",
+    "fixed_skills": [
+      "stealth"
+    ],
+    "choice_skills": [
+      "deception",
+      "intimidation"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Common clothes, dark cloak, thieves' tools.",
+    "feature": "Thieves' Cant",
+    "feature_desc": "",
+    "mementos": [
+      "A golden key to which you haven't discovered the lock.",
+      "A brand that was burned into your shoulder as punishment for a crime.",
+      "A scar for which you have sworn revenge.",
+      "The distinctive mask that gives you your nickname (for instance, the Black Mask or the Red Fox).",
+      "A gold coin which reappears in your possession a week after you've gotten rid of it.",
+      "The stolen symbol of a sinister organization; not even your fence will take it off your hands.",
+      "Documents that incriminate a dangerous noble or politician.",
+      "The floor plan of a palace.",
+      "The calling cards you leave after (or before) you strike.",
+      "A manuscript written by your mentor: Secret Exits of the World's Most Secure Prisons."
+    ],
+    "suggested_characteristics": null
+  },
+  "Entertainer": {
+    "source": "a5e",
+    "desc": "You're a performer who knows how to dazzle a crowd, an artist but also a professional: you never forget to pass the hat after a show.\n\nAre you a lute-strumming singer? An actor? A poet or author? A tumbler or juggler? Are you a rising talent, or a star with an established following?",
+    "fixed_skills": [
+      "performance"
+    ],
+    "choice_skills": [
+      "acrobatics",
+      "culture",
+      "persuasion"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Lute or other musical instrument, costume.",
+    "feature": "Pay the Piper",
+    "feature_desc": "",
+    "mementos": [
+      "Your unfinished masterpiece—if you can find inspiration to overcome your writer's block.",
+      "Fine clothing suitable for a noble and some reasonably convincing costume jewelry.",
+      "A love letter from a rich admirer.",
+      "A broken instrument of masterwork quality—if repaired, what music you could make on it!",
+      "A stack of slim poetry volumes you just can't sell.",
+      "Jingling jester's motley.",
+      "A disguise kit.",
+      "Water-squirting wands, knotted scarves, trick handcuffs, and other tools of a bizarre new entertainment trend: a nonmagical magic show.",
+      "A stage dagger.",
+      "A letter of recommendation from your mentor to a noble or royal court."
+    ],
+    "suggested_characteristics": null
+  },
+  "Exile": {
+    "source": "a5e",
+    "desc": "Your homeland is barred to you and you wander strange lands. You will never be mistaken for a local but you find ready acceptance among other adventurers, many of which are as rootless as you are.\n\nAre you a banished noble? A refugee from war or from an undead uprising? A dissident or a criminal on the run? Or a stranded traveler from an unreachable distant land?",
+    "fixed_skills": [
+      "survival"
+    ],
+    "choice_skills": [
+      "history",
+      "performance"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Traveler's clothes, 10 days rations.",
+    "feature": "Fellow Traveler",
+    "feature_desc": "You gain an expertise die on Persuasion checks against others who are away from their land of birth.",
+    "mementos": [
+      "A musical instrument which was common in your homeland.",
+      "A memorized collection of poems or sagas.",
+      "A locket containing a picture of your betrothed from whom you are separated.",
+      "Trade, state, or culinary secrets from your native land.",
+      "A piece of jewelry given to you by someone you will never see again.",
+      "An inaccurate, ancient map of the land you now live in.",
+      "Your incomplete travel journals.",
+      "A letter from a relative directing you to someone who might be able to help you.",
+      "A precious cultural artifact you must protect.",
+      "An arrow meant for the heart of your betrayer."
+    ],
+    "suggested_characteristics": null
+  },
+  "Farmer": {
+    "source": "a5e",
+    "desc": "You were raised a farmer, an occupation where the money is short and the work days are long. You've become an adventurer, a career where the money is plentiful but your days—if you're not careful—may be all too short.\n\nWhy did you beat your plowshare into a sword? Do you seek adventure, excitement, or revenge? Do you leave behind a thriving farmstead or a smoking ruin?",
+    "fixed_skills": [
+      "nature"
+    ],
+    "choice_skills": [
+      "animal handling",
+      "survival"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Common clothes, shovel, mule with saddlebags, 5 Supply.",
+    "feature": "Bit and Bridle",
+    "feature_desc": "",
+    "mementos": [
+      "A strange item you dug up in a field: a key, a lump of unmeltable metal, a glass dagger.",
+      "The bag of beans your mother warned you not to plant.",
+      "The shovel, pickaxe, pitchfork, or other tool you used for labor. For you it's a one-handed simple melee weapon that deals 1d6 piercing, slashing, or bludgeoning damage.",
+      "A debt you must pay.",
+      "A mastiff.",
+      "Your trusty fishing pole.",
+      "A corncob pipe.",
+      "A dried flower from your family garden.",
+      "Half of a locket given to you by a missing sweetheart.",
+      "A family weapon said to have magic powers, though it exhibits none at the moment."
+    ],
+    "suggested_characteristics": null
+  },
+  "Folk Hero": {
+    "source": "a5e",
+    "desc": "You were born to a commoner family, but some event earned you fame. You're admired locally, and tales of your deeds have reached the far corners of the world.\n\nDid you win your fame by battling an oppressive tyrant? Saving your village from a monster? Or by something more prosaic like winning a wrestling bout or a pie-eating contest?",
+    "fixed_skills": [
+      "survival"
+    ],
+    "choice_skills": [
+      "animal handling",
+      "nature"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Any artisan's tools except alchemist's supplies, common clothes.",
+    "feature": "Local Fame",
+    "feature_desc": "",
+    "mementos": [
+      "The mask you used to conceal your identity while fighting oppression (you are only recognized as a folk hero while wearing the mask).",
+      "A necklace bearing a horn, tooth, or claw from the monster you defeated.",
+      "A ring given to you by the dead relative whose death you avenged.",
+      "The weapon you wrestled from the leader of the raid on your village.",
+      "The trophy, wrestling belt, silver pie plate, or other prize marking you as the county champion.",
+      "The famous scar you earned in your struggle against your foe.",
+      "The signature weapon which provides you with your nickname.",
+      "The injury or physical difference by which your admirers and foes recognize you.",
+      "The signal whistle or instrument which you used to summon allies and spook enemies.",
+      "Copies of the ballads and poems written in your honor."
+    ],
+    "suggested_characteristics": null
+  },
+  "Gambler": {
+    "source": "a5e",
+    "desc": "You haven't met your match at dice or cards. A career of high stakes and daring escapades has taught you when to play close to the chest and when to risk it all—but you haven't yet learned when to walk away.\n\nAre you a brilliant student of the game, a charming master of the bluff and counterbluff, or a cheater with fast hands? What turned you to a life of adventure: a string of bad luck, or an insatiable thirst for risk?",
+    "fixed_skills": [
+      "deception"
+    ],
+    "choice_skills": [
+      "insight",
+      "sleight of hand"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Fine clothes, dice set, playing card set.",
+    "feature": "Lady Luck",
+    "feature_desc": "Each week you may attempt a \"lucky throw\" to support yourself by gambling. Roll a d6 to determine the lifestyle you can afford with your week's winnings (1-2: poor, 3-5: moderate, 6: rich).",
+    "mementos": [
+      "Gambling debts owed you by someone who's gone missing.",
+      "Your lucky coin that you've always won back after gambling it away.",
+      "The deeds to a monster-infested copper mine, a castle on another plane of existence, and several other valueless properties.",
+      "A pawn shop ticket for a valuable item—if you can gather enough money to redeem it.",
+      "The hard-to-sell heirloom that someone really wants back.",
+      "Loaded dice or marked cards. They grant advantage on gambling checks when used, but can be discovered when carefully examined by someone with the appropriate tool proficiency (dice or cards).",
+      "An invitation to an annual high-stakes game to which you can't even afford the ante.",
+      "A two-faced coin.",
+      "A torn half of a card—a long-lost relative is said to hold the other half.",
+      "An ugly trinket that its former owner claimed had hidden magical powers."
+    ],
+    "suggested_characteristics": null
+  },
+  "Guildmember": {
+    "source": "a5e",
+    "desc": "It never hurts to be part of a team, and when you're part of a guild opportunities knock at your door.\n\nAre you a member of a trade or artisan's guild? Or an order of mages or monster hunters? Or have you found entry into a secretive guild of thieves or assassins?",
+    "fixed_skills": [],
+    "choice_skills": "any",
+    "num_choices": 2,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "One set of artisan's tools or one instrument, traveler's clothes, guild badge.",
+    "feature": "Guild Business",
+    "feature_desc": "",
+    "mementos": [
+      "Artisans Guild: An incomplete masterpiece which your mentor never finished.",
+      "Entertainers Guild: An incomplete masterpiece which your mentor never finished.",
+      "Explorers Guild: A roll of incomplete maps each with a reward for completion.",
+      "Laborers Guild: A badge entitling you to a free round of drinks at most inns and taverns.",
+      "Adventurers Guild: A request from a circus to obtain live exotic animals.",
+      "Bounty Hunters Guild: A set of manacles and a bounty on a fugitive who has already eluded you once.",
+      "Mages Guild: The name of a wizard who has created a rare version of a spell that the guild covets.",
+      "Monster Hunters Guild: A bounty, with no time limit, on a monster far beyond your capability.",
+      "Archaeologists Guild: A map marking the entrance of a distant dungeon.",
+      "Thieves Guild: Blueprints of a bank, casino, mint, or other rich locale."
+    ],
+    "suggested_characteristics": null
+  },
+  "Hermit": {
+    "source": "a5e",
+    "desc": "You lived for years alone in a remote shrine, cave, monastery, or elsewhere away from the world. Among your daily tasks you had lots of time for introspection.\n\nWhy were you alone? Were you performing penance? In exile or hiding? Tending a shrine or holy spot? Grieving?",
+    "fixed_skills": [
+      "religion"
+    ],
+    "choice_skills": [
+      "medicine",
+      "survival"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Healer's satchel, herbalism kit, common clothes, 7 days rations, and a prayer book, prayer wheel, or prayer beads.",
+    "feature": "Inner Voice",
+    "feature_desc": "",
+    "mementos": [
+      "The (possibly unhinged) manifesto, encyclopedia, or theoretical work that you spent so much time on.",
+      "The faded set of fine clothes you preserved for so many years.",
+      "The signet ring bearing the family crest that you were ashamed of for so long.",
+      "The book of forbidden secrets that led you to your isolated refuge.",
+      "The beetle, mouse, or other small creature which was your only companion for so long.",
+      "The seemingly nonmagical item that your inner voice says is important.",
+      "The magic-defying clay tablets you spent years translating.",
+      "The holy relic you were duty bound to protect.",
+      "The meteor metal you found in a crater the day you first heard your inner voice.",
+      "Your ridiculous-looking sun hat."
+    ],
+    "suggested_characteristics": null
+  },
+  "Marauder": {
+    "source": "a5e",
+    "desc": "You were a member of an outlaw band. You might have been part of a troop of cutthroat bandits, or a resistance movement battling a tyrant, or a pirate fleet. You lived outside of settled lands, and your name was a terror to rich travelers.\n\nHow did you join your outlaw band? Why did you leave it—or did you?",
+    "fixed_skills": [
+      "survival"
+    ],
+    "choice_skills": [
+      "intimidation",
+      "stealth"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Traveler's clothes, signal whistle, tent (one person).",
+    "feature": "Secret Ways",
+    "feature_desc": "",
+    "mementos": [
+      "The eerie mask by which your victims know you.",
+      "The one item that you wish you hadn't stolen.",
+      "A signet ring marking you as heir to a seized estate.",
+      "A locket containing a picture of the one who betrayed you.",
+      "A broken compass.",
+      "A love token from the young heir to a fortune.",
+      "Half of a torn officer's insignia.",
+      "The hunter's horn which members of your band use to call allies.",
+      "A wanted poster bearing your face.",
+      "Your unfinished thesis from your previous life as an honest scholar."
+    ],
+    "suggested_characteristics": null
+  },
+  "Outlander": {
+    "source": "a5e",
+    "desc": "You lived far from the farms and fields of civilization. You know the beauties and the dangers of the wilderness.\n\nWere you part of a nomadic tribe? A hunter or guide? A lone wanderer or explorer? A guardian of civilization against monsters, or of the old ways against civilization?",
+    "fixed_skills": [
+      "survival"
+    ],
+    "choice_skills": [
+      "athletics",
+      "intimidation"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Traveler's clothes, waterskin, healer's kit, 7 days rations.",
+    "feature": "Trader",
+    "feature_desc": "",
+    "mementos": [
+      "A trophy from the hunt of a mighty beast, such as a phase monster-horn helmet.",
+      "A trophy from a battle against a fierce monster, such as a still-wriggling troll finger.",
+      "A stone from a holy druidic shrine.",
+      "Tools appropriate to your home terrain, such as pitons or snowshoes.",
+      "Hand-crafted leather armor, hide armor, or clothing.",
+      "The handaxe you made yourself.",
+      "A gift from a dryad or faun.",
+      "Trading goods worth 30 gold, such as furs or rare herbs.",
+      "A tiny whistle given to you by a sprite.",
+      "An incomplete map."
+    ],
+    "suggested_characteristics": null
+  },
+  "Sage": {
+    "source": "a5e",
+    "desc": "You are a seeker of the world's truths and an expert in your chosen field, with esoteric knowledge at your fingertips, or at the farthest, in a book you vaguely remember.\n\nWhy have you left the confines of the library to explore the wider world? Do you seek ancient wisdom? Power? The answer to a specific question? Reinstatement in your former institution?",
+    "fixed_skills": [
+      "history"
+    ],
+    "choice_skills": [
+      "arcana",
+      "culture",
+      "engineering",
+      "religion"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Bottle of ink, pen, 50 sheets of parchment, common clothes.",
+    "feature": "Library Privileges",
+    "feature_desc": "As a fellow or friend of several universities you have visiting access to the great libraries, most of which are off-limits to the general public. With enough time spent in a library, you can uncover most of the answers you seek (any question answerable with a DC 20 Arcana, Culture, Engineering, History, Nature, or Religion check).",
+    "mementos": [
+      "A letter from a colleague asking for research help.",
+      "Your incomplete manuscript.",
+      "An ancient scroll in a language that no magic can decipher.",
+      "A copy of your highly unorthodox theoretical work that got you in so much trouble.",
+      "A list of the forbidden books that may answer your equally forbidden question.",
+      "A formula for a legendary magic item for which you have no ingredients.",
+      "An ancient manuscript of a famous literary work believed to have been lost; only you believe that it is genuine.",
+      "Your mentor's incomplete bestiary, encyclopedia, or other work that you vowed to complete.",
+      "Your prize possession: a magic quill pen that takes dictation.",
+      "The name of a book you need for your research that seems to be missing from every library you've visited."
+    ],
+    "suggested_characteristics": null
+  },
+  "Sailor": {
+    "source": "a5e",
+    "desc": "You're an experienced mariner with a keen weather eye and a favorite tavern in every port. Hard voyages have toughened you and the sea's power has made you humble.\n\nWere you a deckhand, an officer, or the captain of your vessel? Did you crew a naval cutter, a fishing boat, a merchant's barge, a privateering vessel, or a pirate ship?",
+    "fixed_skills": [
+      "athletics"
+    ],
+    "choice_skills": [
+      "acrobatics",
+      "perception"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Common clothes, navigator's tools, 50 feet of rope.",
+    "feature": "Sea Salt",
+    "feature_desc": "",
+    "mementos": [
+      "A dagger with a handle carved from a dragon turtle's tooth.",
+      "A scroll tube filled with nautical charts.",
+      "A harpoon (treat as a javelin with its butt end fastened to a rope).",
+      "A scar with a famous tale behind it.",
+      "A treasure map.",
+      "A codebook which lets you decipher a certain faction's signal flags.",
+      "A necklace bearing a scale, shell, tooth, or other nautical trinket.",
+      "Several bottles of alcohol.",
+      "A tale of an eerie encounter with a strange monster, a ghost ship, or other mystery.",
+      "A half-finished manuscript outlining an untested theory about how to rerig a ship to maximize speed."
+    ],
+    "suggested_characteristics": null
+  },
+  "Trader": {
+    "source": "a5e",
+    "desc": "You served your apprenticeship among merchants and traders. You've traveled dusty miles and haggled under distant skies.\n\nWhy are you living a life of adventure? Are you working off your debt to the company store? Are you escorting a caravan through dangerous wilds?\n\nAre you raising capital to start your own business, or trying to restore the fortunes of a ruined trading family? Or are you a smuggler, following secret trade routes unknown to the authorities?",
+    "fixed_skills": [
+      "persuasion"
+    ],
+    "choice_skills": [
+      "culture",
+      "deception",
+      "insight"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Traveler's clothes, abacus, merchant's scale.",
+    "feature": "Supply and Demand",
+    "feature_desc": "",
+    "mementos": [
+      "The first gold piece you earned.",
+      "Thousands of shares in a failed venture.",
+      "A letter of introduction to a rich merchant in a distant city.",
+      "A sample of an improved version of a common tool.",
+      "Scars from a wound sustained when you tried to collect a debt from a vicious noble.",
+      "A love letter from the heir of a rival trading family.",
+      "A signet ring bearing your family crest, which is famous in the mercantile world.",
+      "A contract binding you to a particular trading company for the next few years.",
+      "A letter from a friend imploring you to invest in an opportunity that can't miss.",
+      "A trusted family member's travel journals that mix useful geographical knowledge with tall tales."
+    ],
+    "suggested_characteristics": null
+  },
+  "Urchin": {
+    "source": "a5e",
+    "desc": "You grew up on the streets. You know where to hide and when your puppy dog eyes will earn you a hot meal.\n\nWhy were you on the streets? Were you a runaway? An orphan? Or just an adventurous kid who stayed out late?",
+    "fixed_skills": [
+      "sleight of hand"
+    ],
+    "choice_skills": [
+      "deception",
+      "stealth"
+    ],
+    "num_choices": 1,
+    "tool_proficiencies": null,
+    "languages": null,
+    "equipment": "Common clothes, disguise kit.",
+    "feature": "Guttersnipe",
+    "feature_desc": "When you're in a town or city, you can provide a poor lifestyle for yourself and your companions. Also, you know how to get anywhere in town without being spotted by gangs, gossips, or guard patrols.",
+    "mementos": [
+      "A locket containing pictures of your parents.",
+      "A set of (stolen?) fine clothes.",
+      "A small trained animal, such as a mouse, parrot, or monkey.",
+      "A map of the sewers.",
+      "The key or signet ring that was around your neck when you were discovered as a foundling.",
+      "A battered one-eyed doll.",
+      "A portfolio of papers given to you by a fleeing, wounded courier.",
+      "A gold tooth (not yours, and not in your mouth).",
+      "The flowers or trinkets that you sell.",
+      "A dangerous secret overheard while at play."
+    ],
+    "suggested_characteristics": null
+  }
+}

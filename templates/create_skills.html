@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="page">
+    <h1>Proficiencies</h1>
+
+    {% set c_num = class_data.num_choices if class_data.num_choices else 0 %}
+    {% set b_num = background_data.num_choices if background_data.num_choices else 0 %}
+    {% set r_num = race_data.num_choices if race_data.num_choices else 0 %}
+    {% set total_choices = c_num + b_num + r_num %}
+
+    {% set c_skills = class_data.choice_skills if class_data.choice_skills is iterable and class_data.choice_skills is not string else [] %}
+    {% set b_skills = background_data.choice_skills if background_data.choice_skills is iterable and background_data.choice_skills is not string else [] %}
+    {% set r_skills = race_data.choice_skills if race_data.choice_skills is iterable and race_data.choice_skills is not string else [] %}
+
+    {% set combined_skills = c_skills + b_skills + r_skills %}
+
+    {% set has_any = ('any' in combined_skills) or
+                     (class_data.choice_skills == 'any') or
+                     (background_data.choice_skills == 'any') or
+                     (race_data.choice_skills == 'any') %}
+
+    {% set pool = all_skills if has_any else combined_skills %}
+    {% set available_skills = pool | reject('in', skills.fixed_skills) | unique | list %}
+
+    <div class="counter-block">
+        <div>
+            <div class="counter-num" id="choices-remaining">{{ total_choices }}</div>
+            <div class="counter-label">Remaining</div>
+        </div>
+        <div class="counter-divider"></div>
+        <div>
+            <div class="counter-num">{{ total_choices }}</div>
+            <div class="counter-label">Total Choices</div>
+        </div>
+    </div>
+
+    <form action="/create/skills" method="POST">
+
+        {% if skills.fixed_skills %}
+        <h2>Innate Proficiencies</h2>
+        <div class="skills-grid">
+            {% for skill in skills.fixed_skills %}
+            <div class="innate-tag">
+                <div class="innate-pip"></div>
+                <span class="innate-name">{{ skill | title }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <h2>Choose Your Skills</h2>
+        <div class="skills-grid">
+            {% for skill in available_skills %}
+            <div class="skill-card" onclick="toggleSkill(this)">
+                <div class="skill-pip"></div>
+                <span class="skill-name">{{ skill | title }}</span>
+                <input type="checkbox" name="skills" value="{{ skill }}" style="display: none;" class="skill-checkbox">
+            </div>
+            {% endfor %}
+        </div>
+
+        <button type="submit" class="btn" style="width: 100%;">Review Character</button>
+    </form>
+</div>
+
+<script>
+    // How many skills this character gets to pick — injected from the server
+    const MAX_CHOICES = {{ total_choices }};
+
+    // Click a skill card to toggle it on/off. Simple, satisfying, very clickable.
+    function toggleSkill(card) {
+        const isSelected = card.classList.contains('selected');
+        const checkedCount = document.querySelectorAll('.skill-card.selected').length;
+
+        if (isSelected) {
+            // Unselecting — buyer's remorse is real
+            card.classList.remove('selected');
+            card.querySelector('.skill-checkbox').checked = false;
+        } else {
+            // Can't pick more than you're allowed. D&D has rules, man.
+            if (checkedCount >= MAX_CHOICES) return;
+            card.classList.add('selected');
+            card.querySelector('.skill-checkbox').checked = true;
+        }
+
+        updateState();
+    }
+
+    // Keeps the UI honest — updates the counter and locks out unselected cards when at max
+    function updateState() {
+        const checkedCount = document.querySelectorAll('.skill-card.selected').length;
+        // Show how many picks are left
+        document.getElementById('choices-remaining').textContent = MAX_CHOICES - checkedCount;
+
+        // When at max, lock out the remaining cards so players can't cheat the system
+        const atMax = checkedCount >= MAX_CHOICES;
+        document.querySelectorAll('.skill-card').forEach(card => {
+            card.classList.toggle('locked', atMax && !card.classList.contains('selected'));
+        });
+    }
+
+    // Run once on page load to set initial state
+    updateState();
+</script>
+{% endblock %}

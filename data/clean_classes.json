@@ -1,0 +1,222 @@
+{
+  "barbarian": {
+    "source": "wotc-srd",
+    "hit_die": "1d12",
+    "saves": ["strength", "constitution"],
+    "armor_proficiencies": ["light armor", "medium armor", "shields"],
+    "weapon_proficiencies": ["simple weapons", "martial weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "animal handling",
+      "athletics",
+      "intimidation",
+      "nature",
+      "perception",
+      "survival"
+    ],
+    "num_choices": 2
+  },
+  "bard": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["dexterity", "charisma"],
+    "armor_proficiencies": ["light armor"],
+    "weapon_proficiencies": ["simple weapons", "hand crossbows", "longswords", "rapiers", "shortswords"],
+    "tool_proficiencies": ["three musical instruments of your choice"],
+    "fixed_skills": [],
+    "choice_skills": ["any"],
+    "num_choices": 3
+  },
+  "cleric": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["wisdom", "charisma"],
+    "armor_proficiencies": ["light armor", "medium armor", "shields"],
+    "weapon_proficiencies": ["simple weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "history",
+      "insight",
+      "medicine",
+      "persuasion",
+      "religion"
+    ],
+    "num_choices": 2
+  },
+  "druid": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["intelligence", "wisdom"],
+    "armor_proficiencies": ["light armor", "medium armor", "shields (druids will not wear armor or use shields made of metal)"],
+    "weapon_proficiencies": ["clubs", "daggers", "darts", "javelins", "maces", "quarterstaffs", "scimitars", "sickles", "slings", "spears"],
+    "tool_proficiencies": ["herbalism kit"],
+    "fixed_skills": [],
+    "choice_skills": [
+      "arcana",
+      "animal handling",
+      "insight",
+      "medicine",
+      "nature",
+      "perception",
+      "religion",
+      "survival"
+    ],
+    "num_choices": 2
+  },
+  "fighter": {
+    "source": "wotc-srd",
+    "hit_die": "1d10",
+    "saves": ["strength", "constitution"],
+    "armor_proficiencies": ["all armor", "shields"],
+    "weapon_proficiencies": ["simple weapons", "martial weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "acrobatics",
+      "animal handling",
+      "athletics",
+      "history",
+      "insight",
+      "intimidation",
+      "perception",
+      "survival"
+    ],
+    "num_choices": 2
+  },
+  "monk": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["strength", "dexterity"],
+    "armor_proficiencies": [],
+    "weapon_proficiencies": ["simple weapons", "shortswords"],
+    "tool_proficiencies": ["choose one type of artisan's tools or one musical instrument"],
+    "fixed_skills": [],
+    "choice_skills": [
+      "acrobatics",
+      "athletics",
+      "history",
+      "insight",
+      "religion",
+      "stealth"
+    ],
+    "num_choices": 2
+  },
+  "paladin": {
+    "source": "wotc-srd",
+    "hit_die": "1d10",
+    "saves": ["wisdom", "charisma"],
+    "armor_proficiencies": ["all armor", "shields"],
+    "weapon_proficiencies": ["simple weapons", "martial weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "athletics",
+      "insight",
+      "intimidation",
+      "medicine",
+      "persuasion",
+      "religion"
+    ],
+    "num_choices": 2
+  },
+  "ranger": {
+    "source": "wotc-srd",
+    "hit_die": "1d10",
+    "saves": ["strength", "dexterity"],
+    "armor_proficiencies": ["light armor", "medium armor", "shields"],
+    "weapon_proficiencies": ["simple weapons", "martial weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "animal handling",
+      "athletics",
+      "insight",
+      "investigation",
+      "nature",
+      "perception",
+      "stealth",
+      "survival"
+    ],
+    "num_choices": 3
+  },
+  "rogue": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["dexterity", "intelligence"],
+    "armor_proficiencies": ["light armor"],
+    "weapon_proficiencies": ["simple weapons", "hand crossbows", "longswords", "rapiers", "shortswords"],
+    "tool_proficiencies": ["thieves' tools"],
+    "fixed_skills": [],
+    "choice_skills": [
+      "acrobatics",
+      "athletics",
+      "deception",
+      "insight",
+      "intimidation",
+      "investigation",
+      "perception",
+      "performance",
+      "persuasion",
+      "sleight of hand",
+      "stealth"
+    ],
+    "num_choices": 4
+  },
+  "sorcerer": {
+    "source": "wotc-srd",
+    "hit_die": "1d6",
+    "saves": ["constitution", "charisma"],
+    "armor_proficiencies": [],
+    "weapon_proficiencies": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "arcana",
+      "deception",
+      "insight",
+      "intimidation",
+      "persuasion",
+      "religion"
+    ],
+    "num_choices": 2
+  },
+  "warlock": {
+    "source": "wotc-srd",
+    "hit_die": "1d8",
+    "saves": ["wisdom", "charisma"],
+    "armor_proficiencies": ["light armor"],
+    "weapon_proficiencies": ["simple weapons"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "arcana",
+      "deception",
+      "history",
+      "intimidation",
+      "investigation",
+      "nature",
+      "religion"
+    ],
+    "num_choices": 2
+  },
+  "wizard": {
+    "source": "wotc-srd",
+    "hit_die": "1d6",
+    "saves": ["intelligence", "wisdom"],
+    "armor_proficiencies": [],
+    "weapon_proficiencies": ["daggers", "darts", "slings", "quarterstaffs", "light crossbows"],
+    "tool_proficiencies": [],
+    "fixed_skills": [],
+    "choice_skills": [
+      "arcana",
+      "history",
+      "insight",
+      "investigation",
+      "medicine",
+      "religion"
+    ],
+    "num_choices": 2
+  }
+}

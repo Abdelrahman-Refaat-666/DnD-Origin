@@ -259,3 +259,110 @@ a:hover { text-decoration: underline; }
   font-style: italic;
   padding: 2rem 0;
 }
+
+/* ── Skill Cards ── */
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: border-color 0.2s, background 0.2s, opacity 0.2s;
+    user-select: none;
+}
+
+.skill-card:hover:not(.locked) { border-color: var(--gold-dim); }
+
+.skill-card.selected {
+    border-color: var(--gold);
+    background: rgba(201, 168, 76, 0.08);
+}
+
+.skill-card.locked:not(.selected) { opacity: 0.35; cursor: not-allowed; }
+
+.skill-pip {
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.skill-card.selected .skill-pip { background: var(--gold); border-color: var(--gold); }
+
+.skill-card.selected .skill-name { color: var(--gold); }
+
+.innate-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: rgba(201, 168, 76, 0.05);
+}
+
+.innate-pip {
+    width: 14px;
+    min-width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+}
+
+.innate-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+}
+
+.skill-name {
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    transition: color 0.2s;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 2rem;
+}
+
+.counter-block {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.counter-divider { width: 1px; height: 32px; background: var(--border); }
+
+.counter-num {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    line-height: 1;
+}
+
+.counter-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
