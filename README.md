@@ -59,23 +59,21 @@ The stylesheet creates a dark, fantasy-themed aesthetic using CSS custom propert
 
 ## Design Choices and Tradeoffs
 
-**SQLite over PostgreSQL or another production database:** SQLite was chosen because it requires no separate server process, no configuration, and no credentials. The entire database is a single file (`origin.db`) that is created automatically on first run. For a single-user or small-scale application, this simplicity is a major advantage. The limitation is that SQLite does not handle concurrent writes well, so scaling this app to many simultaneous users would require migrating to a client-server database.
+**SQLite over PostgreSQL or another production database:** SQLite was chosen because it requires no separate server process, no configuration, and no credentials. The entire database is a single file (`origin.db`) that is created automatically on first run. For a single-user or small-scale application, this simplicity is a major advantage. The limitation is that SQLite does not handle concurrent writes well, so scaling this app to many simultaneous users would require migrating to a client-server database (or that was what I read, i'm simply more familiar with SQLite and all that's said above is why I didn't change it).
 
-**Raw `sqlite3` over an ORM:** Using direct SQL queries keeps the code transparent — you can see exactly what query runs against the database. The cost is verbosity and manual connection management, but the project is small enough that this overhead is minimal.
+**Raw `sqlite3` over an ORM:** Using direct SQL queries keeps the code transparent — you can see exactly what query runs against the database. The cost is verbosity and manual connection management, but the project is small enough that this overhead is minimal (I got lost a thousand times in the project but the readability saved me everytime).
 
 **Session-based character building over database drafts:** Storing the in-progress character in the Flask session avoids creating a "draft" state in the database and keeps the schema clean. The tradeoff is that progress is lost if the session expires or the user closes the browser. For a short, guided creation process, this felt like the right call.
 
-**JSON for skills storage over a junction table:** Skills are stored as a JSON string in a single column because they are always written and read as a complete set — the app never needs to query for individual skills or join on them. A normalized junction table would add schema complexity without providing a meaningful query advantage.
+**JSON for skills storage over a junction table:** Skills are stored as a JSON string in a single column because they are always written and read as a complete set — the app never needs to query for individual skills or join on them. A normalized junction table would add schema complexity without providing a meaningful query advantage, and I also have to mention that the data was already in a JSON format online.
 
 **In-memory data loading over database lookup for D&D reference data:** The JSON data files are loaded into Python lists at startup and passed directly to templates. An alternative would be storing races, classes, and backgrounds in database tables, but since this data is static reference material that never changes at runtime, reading it from JSON once and keeping it in memory is faster and simpler.
 
-**Custom CSS over a framework:** The entire frontend is styled with hand-written CSS. While a framework like Bootstrap or Tailwind would speed up initial development, the custom approach gives full control over the fantasy aesthetic — the dark color palette, the serif typography, the gold accents — and results in a lighter page with no external CSS dependency beyond the two Google Fonts.
+**Custom CSS over a framework:** The entire frontend is styled with hand-written CSS. While a framework like Bootstrap or Tailwind would speed up initial development, the custom approach gives full control over the fantasy aesthetic — the dark color palette, the serif typography, the gold accents — and results in a lighter page with no external CSS dependency beyond the two Google Fonts (AI can use that full control to it's maximum).
 
 ## How to Run
 
-1. Install dependencies: `pip install flask flask-session`
-2. Run the application: `python app.py`
-3. Open a browser and navigate to `http://127.0.0.1:5000`
+install flask and hit the "flask run" boiiii.
 
 The database (`origin.db`) is created automatically on first run. No additional setup is required.
 
