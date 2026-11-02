@@ -1,0 +1,12 @@
+# Created automatically when the app runs
+origin.db
+flask_session/
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Editor
+.vscode/

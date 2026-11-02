@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS ability_scores (
 CREATE TABLE IF NOT EXISTS proficiencies (
     'id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
     'character_id' INTEGER NOT NULL,
-    'saving_throws' TEXT NOT NULL DEFAULT 1,
-    'skills' TEXT NOT NULL,
+    'saving_throws' TEXT NOT NULL DEFAULT '[]',  -- JSON list, like ["strength", "constitution"]
+    'skills' TEXT NOT NULL,  -- JSON list of skill names
     FOREIGN KEY (character_id) REFERENCES characters(id)
 );
