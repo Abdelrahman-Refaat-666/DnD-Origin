@@ -1,0 +1,51 @@
+{# The character sheet itself — shared by the review page and the saved character page #}
+<p class="subtitle">Level {{ sheet.level }} {{ sheet.race | title }} {{ sheet.class_ | title }} &middot; {{ sheet.background }}</p>
+
+<div class="stat-row">
+  <div class="stat"><div class="stat-num">{{ sheet.hp }}/{{ sheet.max_hp }}</div><div class="stat-label">Hit Points</div></div>
+  <div class="stat"><div class="stat-num">{{ sheet.armor_class }}</div><div class="stat-label">Armor Class</div></div>
+  <div class="stat"><div class="stat-num">{{ sheet.speed }} ft</div><div class="stat-label">Speed</div></div>
+  <div class="stat"><div class="stat-num">{{ sheet.initiative | signed }}</div><div class="stat-label">Initiative</div></div>
+  <div class="stat"><div class="stat-num">{{ sheet.proficiency_bonus | signed }}</div><div class="stat-label">Proficiency</div></div>
+  <div class="stat"><div class="stat-num">{{ sheet.passive_perception }}</div><div class="stat-label">Passive Perception</div></div>
+</div>
+
+<h2>Ability Scores</h2>
+<div class="ability-grid">
+  {% for ability in sheet.abilities %}
+  <div class="ability-box">
+    <label>{{ ability.full }}</label>
+    <div class="ability-score">{{ ability.score }}</div>
+    <div class="ability-mod">{{ ability.mod | signed }}</div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="sheet-columns">
+  <div>
+    <h2>Saving Throws</h2>
+    <ul class="prof-list">
+      {% for save in sheet.saving_throws %}
+      <li class="{% if save.proficient %}proficient{% endif %}">
+        <span class="prof-pip"></span>
+        <span class="prof-mod">{{ save.mod | signed }}</span>
+        <span>{{ save.name | title }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div>
+    <h2>Skills</h2>
+    <ul class="prof-list">
+      {% for skill in sheet.skills %}
+      <li class="{% if skill.proficient %}proficient{% endif %}">
+        <span class="prof-pip"></span>
+        <span class="prof-mod">{{ skill.mod | signed }}</span>
+        <span>{{ skill.name | skill_title }} <small>({{ skill.ability | upper }})</small></span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<p class="note">AC assumes no armor yet (Barbarians and Monks use Unarmored Defense).</p>

@@ -2,15 +2,20 @@
 
 {% block content %}
 <div class="page">
+  {% set step = 2 %}
+  {% include "steps.html" %}
   <h1>Choose Your Race</h1>
   <form method="post">
-    <select name="race">
+    <select name="race" required>
       <option value="">-- Select a race --</option>
       {% for race in races %}
-        <option value="{{ race.name }}">{{ race.name }}</option>
+        <option value="{{ race.name }}" {% if race.name == selected %}selected{% endif %}>{{ race.name | title }}</option>
       {% endfor %}
     </select>
-    <button type="submit">Next</button>
+    <div class="form-nav">
+      <a href="/create" class="back">&larr; Back</a>
+      <button type="submit">Next</button>
+    </div>
   </form>
 </div>
 {% endblock %}

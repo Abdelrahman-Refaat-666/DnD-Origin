@@ -2,33 +2,59 @@
 
 {% block content %}
 <div class="page">
+  {% set step = 5 %}
+  {% include "steps.html" %}
   <h1>Assign Ability Scores</h1>
-  <p class="points-bar">Points Remaining: <span id="points">27</span></p>
+  <p class="points-bar">Points Remaining: <span id="points">{{ budget }}</span></p>
 
   <form method="post" id="abilities-form">
     <div class="ability-grid">
       {% for ability in ["str", "dex", "con", "int", "wis", "cha"] %}
         <div class="ability-box">
-          <label>{{ ability.upper() }}</label>
+          <label>{{ full_names[ability] }}</label>
           <div class="ability-controls">
             <button type="button" onclick="change('{{ ability }}', -1)">-</button>
-            <span id="{{ ability }}-score" class="ability-score">8</span>
+            <span id="{{ ability }}-score" class="ability-score">{{ base[ability] }}</span>
             <button type="button" onclick="change('{{ ability }}', 1)">+</button>
           </div>
-          <input type="hidden" name="{{ ability }}" id="{{ ability }}" value="8">
+          <div class="ability-final">
+            <span id="{{ ability }}-bonus" class="racial-bonus"></span>
+            Total <span id="{{ ability }}-total"></span> (<span id="{{ ability }}-mod"></span>)
+          </div>
+          <input type="hidden" name="{{ ability }}" id="{{ ability }}" value="{{ base[ability] }}">
         </div>
       {% endfor %}
     </div>
 
-    <button type="submit">Next</button>
+    {% if other_bonus %}
+    {# Half-elves get to pick two extra +1s — the race data marks it as "other" #}
+    <h2>{{ race.name | title }} Bonus</h2>
+    <p class="hint">Choose {{ other_bonus }} abilities to increase by 1.</p>
+    <div class="skills-grid">
+      {% for ability in ["str", "dex", "con", "int", "wis", "cha"] if not bonus.get(ability) %}
+        <label class="bonus-option">
+          <input type="checkbox" name="bonus" value="{{ ability }}" class="bonus-checkbox" {% if ability in bonus_choices %}checked{% endif %}>
+          {{ full_names[ability] }}
+        </label>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="form-nav">
+      <a href="/create/background" class="back">&larr; Back</a>
+      <button type="submit" id="next-button">Next</button>
+    </div>
   </form>
 
   <script>
   // D&D 5e Point Buy cost table — because nothing in life is free, especially not a 15 in Strength
-  const COSTS = {8:0, 9:1, 10:2, 11:3, 12:4, 13:5, 14:7, 15:9};
-  let points = 27;  // 27 points, same as official rules. Spend wisely.
-  // Everyone starts at 8 — the baseline of mediocrity
-  const scores = {str:8, dex:8, con:8, int:8, wis:8, cha:8};
+  const COSTS = {{ costs | tojson }};
+  const BUDGET = {{ budget }};  // 27 points, same as official rules. Spend wisely.
+  const RACIAL = {{ bonus | tojson }};  // the race's fixed bonuses, like {"dex": 2}
+  const OTHER_BONUS = {{ other_bonus }};  // how many extra +1s the player picks (half-elf only)
+  // Everyone starts at 8 — the baseline of mediocrity (or at what they picked before, if they came back)
+  const scores = {{ base | tojson }};
+  let points = BUDGET - Object.values(scores).reduce((sum, score) => sum + COSTS[score], 0);
 
   // The +/- buttons call this. direction is +1 or -1.
   function change(ability, direction) {
@@ -47,12 +73,35 @@
     // Actually apply the change
     scores[ability] = next_score;
     points -= cost;
-
-    // Update the UI so the player sees the result
-    document.getElementById(ability + "-score").innerText = next_score;
     document.getElementById(ability).value = next_score;  // hidden input that gets submitted
-    document.getElementById("points").innerText = points;
+    update();
   }
+
+  // Redraws the scores, the racial bonuses and the totals
+  function update() {
+    const chosen = [...document.querySelectorAll('.bonus-checkbox:checked')].map(box => box.value);
+    for (const ability in scores) {
+      const bonus = (RACIAL[ability] || 0) + (chosen.includes(ability) ? 1 : 0);
+      const total = scores[ability] + bonus;
+      const mod = Math.floor((total - 10) / 2);
+      document.getElementById(ability + "-score").innerText = scores[ability];
+      document.getElementById(ability + "-bonus").innerText = bonus ? "+" + bonus + " racial" : "";
+      document.getElementById(ability + "-total").innerText = total;
+      document.getElementById(ability + "-mod").innerText = (mod >= 0 ? "+" : "") + mod;
+    }
+    document.getElementById("points").innerText = points;
+
+    // Half-elf: lock the other checkboxes once two are picked, and don't allow Next before that
+    if (OTHER_BONUS) {
+      document.querySelectorAll('.bonus-checkbox').forEach(box => {
+        box.disabled = !box.checked && chosen.length >= OTHER_BONUS;
+      });
+      document.getElementById("next-button").disabled = chosen.length !== OTHER_BONUS;
+    }
+  }
+
+  document.querySelectorAll('.bonus-checkbox').forEach(box => box.addEventListener('change', update));
+  update();
   </script>
 </div>
 {% endblock %}

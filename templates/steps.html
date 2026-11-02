@@ -1,0 +1,7 @@
+{# The progress bar at the top of every creation step. Each page sets "step" before including this. #}
+{% set step_names = ["Name", "Race", "Class", "Background", "Abilities", "Skills", "Review"] %}
+<div class="steps">
+  {% for step_name in step_names %}
+    <span class="step {% if loop.index == step %}current{% elif loop.index < step %}done{% endif %}">{{ step_name }}</span>
+  {% endfor %}
+</div>

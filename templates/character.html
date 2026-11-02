@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ sheet.name }} - DnD Origin{% endblock %}
+
+{% block content %}
+<div class="page">
+  <h1>{{ sheet.name }}</h1>
+
+  {% include "sheet.html" %}
+
+  <div class="form-nav">
+    <a href="/" class="back">&larr; All Characters</a>
+    {# the name goes through data-name so names with quotes (like D'Artagnan) can't break the JavaScript #}
+    <form action="/character/{{ character_id }}/delete" method="post" data-name="{{ sheet.name }}" onsubmit="return confirm('Delete ' + this.dataset.name + '? This cannot be undone.');">
+      <button type="submit" class="danger">Delete Character</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -6,15 +6,14 @@
 
   {% if characters %}
     {% for character in characters %}
-      <div>
-        <div class="card">
+      <a href="/character/{{ character['id'] }}" class="card card-link">
         <h2>{{ character["name"] }}</h2>
-        <p>{{ character["race"] }} — {{ character["class"] }} — {{ character["background"] }}</p>
-        <p>Level {{ character["level"] }}</p>
-      </div>
+        <p>Level {{ character["level"] }} {{ character["race"] | title }} {{ character["class"] | title }} &middot; {{ character["background"] }}</p>
+        <p class="card-stats">HP {{ character["current_hp"] }}/{{ character["max_hp"] }} &middot; AC {{ character["armor_class"] }} &middot; Speed {{ character["speed"] }} ft</p>
+      </a>
     {% endfor %}
   {% else %}
-    <p>No characters yet. <a href="/create">Create one!</a></p>
+    <p class="empty">No characters yet. <a href="/create">Create one!</a></p>
   {% endif %}
 </div>
 {% endblock %}

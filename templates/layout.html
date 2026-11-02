@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>DnD Origin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}DnD Origin{% endblock %}</title>
     <link rel="stylesheet" href="/static/style.css">
   </head>
   <body>
     <nav>
+      <a href="/" class="brand"><span>DnD Origin</span></a>
       {% if session.user_id %}
       <a href="/">Home</a>
       <a href="/create">New Character</a>
       <a href="/logout">Logout</a>
+      {% else %}
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
       {% endif %}
     </nav>
 

@@ -2,15 +2,20 @@
 
 {% block content %}
 <div class="page">
+  {% set step = 4 %}
+  {% include "steps.html" %}
   <h1>Choose Your Background</h1>
   <form method="post">
-    <select name="background">
+    <select name="background" required>
       <option value="">-- Select a background --</option>
       {% for background in backgrounds %}
-        <option value="{{ background.name }}">{{ background.name }}</option>
+        <option value="{{ background.name }}" {% if background.name == selected %}selected{% endif %}>{{ background.name }}</option>
       {% endfor %}
     </select>
-    <button type="submit">Next</button>
+    <div class="form-nav">
+      <a href="/create/class" class="back">&larr; Back</a>
+      <button type="submit">Next</button>
+    </div>
   </form>
 </div>
 {% endblock %}

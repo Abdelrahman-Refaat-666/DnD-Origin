@@ -2,10 +2,12 @@
 
 {% block content %}
 <div class="page">
+  {% set step = 1 %}
+  {% include "steps.html" %}
   <h1>Name Your Character</h1>
   <form method="post">
     <label for="name">Character Name</label>
-    <input type="text" id="name" name="name" placeholder="Enter character name">
+    <input type="text" id="name" name="name" placeholder="Enter character name" value="{{ name }}" maxlength="50" required autofocus>
     <button type="submit">Next</button>
   </form>
 </div>
